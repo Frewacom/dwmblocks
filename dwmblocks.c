@@ -5,7 +5,7 @@
 #include<signal.h>
 #include<X11/Xlib.h>
 #define LENGTH(X)               (sizeof(X) / sizeof (X[0]))
-#define CMDLENGTH	  59
+#define CMDLENGTH	  50
 
 typedef struct {
 	char* icon;
@@ -36,7 +36,7 @@ static int screen;
 static Window root;
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][256];
-static char exportstring[CMDLENGTH + 16] = "export BUTTON=-;";
+static char exportstring[CMDLENGTH + 2222] = "export BLOCK_BUTTON=-;";
 static int button = 0;
 static int statusContinue = 1;
 static void (*writestatus) () = setroot;
@@ -76,10 +76,10 @@ void getcmd(const Block *block, char *output)
 	if (button)
 	{
 		cmd = strcat(exportstring, block->command);
-		cmd[14] = '0' + button;
+		cmd[20] = '0' + button;
 		button = 0;
 		cmdf = popen(cmd,"r");
-		cmd[16] = '\0';
+		cmd[22] = '\0';
 	}
 	else
 	{
