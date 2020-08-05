@@ -2,7 +2,7 @@
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	/* { "", "separator", 0, 0 }, */
-	{ " ", "music", 0, 11 },
+	{ "", "music", 0, 11 },
 	{ "", "news", 0, 6},
 	{ "", "mailbox", 15, 12},
 	{ "", "kdeconnect", 15, 0 },
@@ -14,4 +14,4 @@ static const Block blocks[] = {
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
-static char delim = ' ';
+static char *delim = "  ";
